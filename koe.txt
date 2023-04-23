@@ -1,5 +1,0 @@
-this is a test file. 
-version 0.1 6/11/2013 at 12.11
-three lines of text in total
-adding two lines
-now 5 lines in total
