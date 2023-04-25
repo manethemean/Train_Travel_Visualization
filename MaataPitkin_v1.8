@@ -1,0 +1,235 @@
+digraph MaataPitkin {
+
+"Helsinki" , "Copenhagen" , "Stockholm", "Oslo", "Berlin", "Bruxelles", "Paris", "Madrid", "Lisbon", 
+ "Luxembourg", "Rome", "Dublin", "Belfast", "London", "Zagreb", "Ljubjana", "Prague", "Vatikan",
+"Budapest", "Warsaw", "Bratislava", "Vienna", "Athens", "Ankara", "Sofia", "Bern", "Bucharest", "Hague", "Valletta"
+[shape="box" style="filled" color="grey"];
+
+graph [
+    label = "From Finland to selected European cities by train\n For somewhat direct travel; not staying and waiting for night trains \nMatti Kinnunen, 25.4.2023 - V1.8" fontsize="50";
+    rankdir=LR;    
+    #concentrate=True;
+    #labelfloat="True";
+    decorate="True";
+    ]
+
+
+subgraph cluster_dayOne {
+    #style=filled;
+	color=black;
+	fontsize="30";
+	label = "Day one";
+	node [fontsize="20" shape="box"];
+	
+	Tampere -> Turku [label="18:10 \n IC928\n20:05" decorate="True"]
+	Helsinki -> Turku [label="17:36\n IC959\n19:50" decorate="True"];
+    Turku -> Stockholm [label="20:55\nViking\n6:30" color="turquoise3" style="dashed" decorate="True" ]
+}
+
+subgraph cluster_dayTwo {
+    #style=filled;
+	color=black;
+	fontsize="30";
+	label = "Day two";
+	node [fontsize="20"  shape="box"];
+
+   	
+   	Stockholm -> Hamburg_Morning [label="17:34\n EN345 \n06:01" color="turquoise3" decorate="True"];
+   	Stockholm -> Berlin [label="16:23\n Snälltåget 301 \n8:47\nOnly 30/3/23 - 4/11/23" color="turquoise3" decorate="True"];
+
+    Stockholm -> Oslo [label=" 10:51\n629\n16:14" decorate="True"];
+    Oslo -> Bergen [label="16:25\nR67\n23:18" decorate="True"];
+    Oslo -> Trondheim [label="18:02 \n R51 \n 00:53" decorate="True"];
+   
+   
+   
+   
+    Stockholm -> Copenhagen [label = "8:21\nSJ 525\n13:35" decorate="True"];
+    Copenhagen -> Hamburg [label = "15:04\nIC397\n20:02" decorate="True"];
+    
+    
+    
+    Hamburg -> Berlin [label="20:34 \n ICE 609\n22:23" decorate="True"];
+    Hamburg -> Berlin [label="21:51 \n ICE 805 23:53" decorate="True"];
+    
+
+    
+
+   
+
+}
+
+subgraph cluster_dayThree{
+    #style=filled;
+	color=black;
+	fontsize="30";
+	label = "Day three";
+	node [fontsize="20" shape="box"];
+
+    Hamburg_Morning -> Frankfurt [label="08:28 \n ICE1577 \n 13:09" decorate="True" color="darkorange1"] ;
+    Frankfurt -> Strasbourg [label="13:56 \nTGV9580 \n 16:02" decorate="True" color="darkorange1"];
+    Strasbourg -> Paris [label="17:19 \nTGV9580 \n 19_05" decorate="True" color="darkorange1"];
+    Strasbourg -> Marseille [label="16:15 \nTGV9580 \n21:48" decorate="True" color="darkorange1"];
+    
+    Frankfurt -> Luxembourg [label="13:42\n ICE 228 RE1 \n17:48" decorate="True" color="darkorange1"];
+
+   
+	
+	Berlin -> Prague [label="9:01\nEC253\n13:35" decorate="True"];
+    Prague -> Budapest [label="15:24 \n EC281\n22:28" decorate="True"];
+    
+    Berlin -> Warsaw [label="09:51\n EC45 \n 15:54" decorate="True"];
+    Berlin -> Krakow [label="10:52\n EC57 \n 18:02" decorate="True"];
+	
+	Hamburg_Morning -> Munich [label="7:01\n ICE583\n13:01" decorate="True" color="darkorange1"];
+	Munich -> Bologna [label="13:34\nEC87\n20:16" decorate="True" color="darkorange1"];
+
+	    
+	
+    Hamburg_Morning -> Amsterdam [label="07:45\nICE 517 IC 240\n13:00" decorate="True" color="darkorange1"] ;
+    Amsterdam -> London [label="16:47\nEST 9157\n20:00" decorate="True" color="darkorange1"];
+    Amsterdam -> Bruxelles [label="13:28 \n ICD 9240\n16:12" decorate="True" color="darkorange1"];
+    Bruxelles -> London [label="18:51\n EST9157 \n20:00" decorate="True" color="darkorange1"]
+    Amsterdam -> Paris [label=" 15:11\n THA9364\n18:35" decorate="True"  color="darkorange1"];
+    Amsterdam -> Hague [label=" 13:43\n THA9364\n14:53" decorate="True"  color="darkorange1"];
+    
+	
+
+    
+	
+    Hamburg -> Munich [label="20:24 \n NJ40491 \n07:06"  color="turquoise3" decorate="True"];
+    Munich -> Innsbruck [label="07:34\n EC81\n9:24" decorate="True"];
+    Innsbruck -> Bologna [label="09:24\n EC81\n14:10" decorate="True"];
+    Bologna -> Venice [label="15:01 \n FR9420 \n16:34"decorate="True" ];
+    Bologna -> Rome [label="14:27 \n FR9539\n16:49" decorate="True"];
+    Bologna -> Florence [label="15:02\nFR 9421\n1539" decorate="True"]
+    
+    Munich -> Vienna [label="07:23 \n RJX61 \n 11:32" decorate="True"];
+    Vienna -> Budapest [label="12:42 \n EC145 \n 15:19" decorate="True"];
+    Vienna -> Bratislava [label="12:45 \n REX6 \n 13:44" decorate="True"];
+    
+    Rome -> Vatikan [label="Subway line A" decorate="True"];
+    
+
+    
+    Hamburg -> Basel [label="22:07\nNJ471\n8:10" color="turquoise3" decorate="True"];
+    Basel -> Milan [label="08:33 \n ICE563 EC315\n12:50" decorate="True"];
+    Milan -> Venice [label="13:45\n FR9731\n16:12" decorate="True"];
+    Milan -> Rome [label="13:00 \n FR 9631 \n 16:15" decorate="True"];
+    Rome -> Naples [label="16:25 \n FR 9631 \n 17:33" decorate="True"];
+    Milan -> Florence [label="13:10 \n FR 9539 \n 15:04" decorate="True"];
+    Milan -> Ancona [label="14:05 \n FR8813 \n 17:34" decorate="True"]
+    Milan -> Bari [label="14:05 \n FR 8813 \n 21:30" decorate="True"];
+    
+    Basel -> Bern [label="08:28 \n ICE1063 \n 09:26" decorate="True"];
+    
+
+
+    Basel -> Paris [label="10:34\nTGV9210\n13:40" decorate="True"];
+    Paris -> Barcelona [label="14:54\n TGV 9210 TGV 9715 \n21:25" decorate="True"];
+    Paris -> London [label="15:13\nES9039 \n 16:30" decorate="True"];
+    Paris -> Marseille [label="13:54 \n TGV6077 \n17:14" decorate="True"];
+    Marseille -> Nice [label="17:28 -TGV6077\n19:58" decorate="True"];
+    Paris -> Bordeaux [label="12:08 \n TGV12259\n14:15" decorate="True"];
+    Paris -> Toulouse [label="15:08\n TGV8509\n19:26" decorate="True"];
+    London -> Edinburgh [label="18:00 \n R \n 22:20" decorate="True"];
+    London -> Glasgow [label="18:30 \n R \n 23:11" decorate="True"];
+    London -> Holyhead [label="19:02 \n R \n 22:57" decorate="True"];
+    
+ 
+}
+
+subgraph cluster_dayFourIt {
+    #style=filled;
+	color=black;
+	fontsize="30";
+	label = "Day four Italia and Malta";
+	node [fontsize="20"  shape="box"]
+	
+    Rome -> Palermo [label="23:00\nICN1959\n11:27" color="turquoise3" decorate="True"];
+    Rome -> Syracuse [label="23:00\nICN1959\n11:29" color="turquoise3" decorate="True"];
+    Syracure -> Pozzallo [label="14:10\nR12936\n15:26"  decorate="True"];
+    Pozzallo -> Valletta [label="19:30\n Virtuferries \n21:15" style="dashed" decorate="True"];
+
+
+}
+subgraph cluster_dayFourSp {
+    #style=filled;
+	color=black;
+	fontsize="30";
+	label = "Day four Iberia";
+	node [fontsize="20"  shape="box"];
+	
+    Barcelona -> Madrid [label="06:20\n AVE 3260 \n08:50" decorate="True"];
+    Madrid -> Sevilla [label="09:05\n AVE2090 \n11:28" decorate="True"];
+    Sevilla -> Granada [label="12:08\nA8335 \n14:46" decorate="True"];
+    Madrid -> Malaga [label="09:35\n AVE2092\n12:26" decorate="True"]
+    Madrid -> Badajoz [label="10:55\n MD /n 16:11" decorate="True"];
+    Badajoz -> Abrantes [label="19:41\m R \n 20:52" decorate="True"];
+    Abrantes -> Lisbon [label="21.02\n IC \n 22.20" decorate="True"];
+
+
+}
+
+
+subgraph cluster_dayFourIr {
+    #style=filled;
+	color=black;
+	fontsize="30";
+	label = "Day four Ireland";
+	node [fontsize="20"  shape="box"]
+	
+    Holyhead -> Dublin [label="by ferry" style="dashed" decorate="True"];
+    Dublin -> Belfast [label="15:20\nIC130\n17:26" decorate="True"];
+    Dublin -> Galway [label="15:35\nIC708\n17:39" decorate="True"];
+
+}
+
+subgraph cluster_dayFourIst {
+    #style=filled;
+	color=black;
+	fontsize="30";
+	label = "Day four Balkans etc";
+	node [fontsize="20"  shape="box"]
+	
+    Budapest  -> Bucharest [label="19:10 \nIC473 \n 11:19" color="turquoise3" decorate="True"];
+    Bucharest -> Sofia [label="10:55 \n Not sure \n20:10" decorate="True"];
+    Sofia -> Istanbul [label="18:40 \n 493 12504 \n06:34" color="turquoise3" decorate="True"];
+    Istanbul -> Ankara [label="8:40\n IC81006 \n13:16" decorate="True"]
+    
+    Bari -> Patras [label="19:30\n Anek Superfast \n 13:30" color="turquoise3" style="dashed" decorate="True"]
+    Patras -> Athens [label="11:55 \n C111E 1319 \m 15:19" decorate="True"]
+    Ancona -> Split [label="19:45\n Croatia Ferry 53 \n6:45\nNot all days every month" color="turquoise3" style="dashed" decorate="True"]
+    Split -> Zagreb [label="8:20\n IC520 \n14:55" decorate="True"]
+    Zagreb -> Ljubjana [label="18:10\n EN40414 R2276 \n20:59" decorate="True"]
+    
+}
+
+subgraph cluster_legend{
+    color=black;
+	fontsize="30";
+    node [fontsize="20"  shape="box"];
+    
+    label="Legend"
+    From -> To [label="Day train" decorate="True"];
+    From -> To [label="Night train" color="turquoise3" decorate="True"];
+    From -> To [label="Ferry" style="dashed" decorate="True"];
+    From -> To [label="Night Ferry" style="dashed" color="turquoise3" decorate="True"];
+    From -> To [label="Hamburg\nnight train\nroute" color="darkorange1" decorate="True"];
+    Capital [shape="box" style="filled" color="grey"];
+    Note [label="Note that\nSTO-HAM night train route\ndrawn with orange"]
+}
+/*
+subgraph cluster_dayFive {
+    #style=filled;
+	color=black;
+	fontsize="30";
+	label = "Day five";
+	node [fontsize="20"  shape="box"];
+	
+    Budapest -> Bucharest [label="15:10\n IC79\n08:06"];
+    
+}m
+*/ 
+}
+
